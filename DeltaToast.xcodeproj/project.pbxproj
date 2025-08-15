@@ -27,11 +27,25 @@
 		F63790E52E4C3D9500F732A5 /* DeltaToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeltaToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63790F62E4C3D9600F732A5 /* DeltaToastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeltaToastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63791002E4C3D9600F732A5 /* DeltaToastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeltaToastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63791262E4C616D00F732A5 /* MediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRemote.framework; path = ../../../../System/Library/PrivateFrameworks/MediaRemote.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F690241F2E4D857B0006CD08 /* Exceptions for "DeltaToast" folder in "DeltaToast" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F63790E42E4C3D9500F732A5 /* DeltaToast */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F63790E72E4C3D9500F732A5 /* DeltaToast */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F690241F2E4D857B0006CD08 /* Exceptions for "DeltaToast" folder in "DeltaToast" target */,
+			);
 			path = DeltaToast;
 			sourceTree = "<group>";
 		};
@@ -78,6 +92,7 @@
 				F63790E72E4C3D9500F732A5 /* DeltaToast */,
 				F63790F92E4C3D9600F732A5 /* DeltaToastTests */,
 				F63791032E4C3D9600F732A5 /* DeltaToastUITests */,
+				F63791182E4C3FE900F732A5 /* Frameworks */,
 				F63790E62E4C3D9500F732A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +105,14 @@
 				F63791002E4C3D9600F732A5 /* DeltaToastUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F63791182E4C3FE900F732A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F63791262E4C616D00F732A5 /* MediaRemote.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +218,8 @@
 			);
 			mainGroup = F63790DC2E4C3D9500F732A5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F63790E62E4C3D9500F732A5 /* Products */;
 			projectDirPath = "";
@@ -393,14 +418,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DeltaToast/DeltaToast.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DeltaToast/Preview Content\"";
 				DEVELOPMENT_TEAM = 46T8W6J2U7;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeltaToast/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,8 +437,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.lewismcclelland.DeltaToast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
 		};
@@ -420,14 +450,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DeltaToast/DeltaToast.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DeltaToast/Preview Content\"";
 				DEVELOPMENT_TEAM = 46T8W6J2U7;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeltaToast/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,8 +469,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.lewismcclelland.DeltaToast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;
 		};
