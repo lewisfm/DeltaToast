@@ -7,6 +7,7 @@
 
 import SwiftUI
 import os
+import Observation
 
 let logger = Logger(subsystem: "me.lewismcclelland.DeltaToast", category: "DeltaToast")
 
@@ -14,6 +15,7 @@ let logger = Logger(subsystem: "me.lewismcclelland.DeltaToast", category: "Delta
 struct DeltaToastApp: App {
     @NSApplicationDelegateAdaptor(DTAppDelegate.self) var delegate
     @Environment(\.openSettings) var openSettings
+    @State private var settings = DTSettings.shared
     
     init() {
         delegate.openSettings = openSettings
@@ -23,15 +25,23 @@ struct DeltaToastApp: App {
         Settings {
             DTSettingsView()
         }
+        .onChange(of: settings.windowSharingType) {
+            delegate.setWindowSharingType(settings.windowSharingType)
+        }
     }
 }
 
+@MainActor
 class DTAppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     var shouldReopenTriggerSettings = false
     var openSettings: OpenSettingsAction?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+#if DEBUG
+        NSApp.setActivationPolicy(.regular)
+#endif
+        
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 300, height: 200),
             styleMask: [.borderless],
@@ -50,6 +60,8 @@ class DTAppDelegate: NSObject, NSApplicationDelegate {
         window.level = .statusBar
         window.collectionBehavior = [.canJoinAllSpaces, .transient]
         
+        setWindowSharingType(DTSettings.shared.windowSharingType)
+        
         if let screen = window.screen ?? NSScreen.main {
             window.setFrame(screen.visibleFrame, display: true, animate: false)
         }
@@ -62,9 +74,12 @@ class DTAppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func setWindowSharingType(_ type: NSWindow.SharingType) {
+        window.sharingType = type
+    }
+    
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
         if shouldReopenTriggerSettings {
-            print("reopen")
             self.openSettings?()
         }
         return false
