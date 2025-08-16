@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F64773F92E503A21001C7CB5 /* MediaRemoteAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = F64773F82E503A21001C7CB5 /* MediaRemoteAdapter */; settings = {ATTRIBUTES = (Required, ); }; };
+		F64773FA2E503A9E001C7CB5 /* MediaRemoteAdapter in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F64773F82E503A21001C7CB5 /* MediaRemoteAdapter */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F63790F72E4C3D9600F732A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -22,6 +27,20 @@
 			remoteInfo = DeltaToast;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F64773FB2E503A9E001C7CB5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F64773FA2E503A9E001C7CB5 /* MediaRemoteAdapter in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F63790E52E4C3D9500F732A5 /* DeltaToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeltaToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F64773F92E503A21001C7CB5 /* MediaRemoteAdapter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +145,7 @@
 				F63790E12E4C3D9500F732A5 /* Sources */,
 				F63790E22E4C3D9500F732A5 /* Frameworks */,
 				F63790E32E4C3D9500F732A5 /* Resources */,
+				F64773FB2E503A9E001C7CB5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +156,7 @@
 			);
 			name = DeltaToast;
 			packageProductDependencies = (
+				F64773F82E503A21001C7CB5 /* MediaRemoteAdapter */,
 			);
 			productName = DeltaToast;
 			productReference = F63790E52E4C3D9500F732A5 /* DeltaToast.app */;
@@ -219,6 +241,7 @@
 			mainGroup = F63790DC2E4C3D9500F732A5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				F64773F72E503A21001C7CB5 /* XCRemoteSwiftPackageReference "mediaremote-adapter" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F63790E62E4C3D9500F732A5 /* Products */;
@@ -584,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F64773F72E503A21001C7CB5 /* XCRemoteSwiftPackageReference "mediaremote-adapter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ejbills/mediaremote-adapter";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F64773F82E503A21001C7CB5 /* MediaRemoteAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F64773F72E503A21001C7CB5 /* XCRemoteSwiftPackageReference "mediaremote-adapter" */;
+			productName = MediaRemoteAdapter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F63790DD2E4C3D9500F732A5 /* Project object */;
 }

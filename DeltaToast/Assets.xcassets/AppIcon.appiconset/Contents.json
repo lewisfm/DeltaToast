@@ -41,11 +41,13 @@
       "size" : "256x256"
     },
     {
+      "filename" : "SCR-20250815-ulkp-2.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
+      "filename" : "DeltaToastAppIcon-iOS-Default-1024x1024@1x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

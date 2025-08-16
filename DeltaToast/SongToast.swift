@@ -7,21 +7,20 @@
 
 import SwiftUI
 
-extension String {
-    static var toastsShowArtistKey : String { "ToastsShowArtistName" }
-}
-
 struct SongToast: View {
-    enum State {
-        case playing
-        case paused
-    }
-    
     var name: String
     var artist: String?
-    var state: State
+    var state: Track.State
     
-    init(_ name: String, artist: String? = nil, state: State) {
+    @Environment(DTSettings.self) private var settings
+    
+    init(_ track: Track, defaultName: String) {
+        name = track.name ?? defaultName
+        artist = track.artist
+        state = track.state
+    }
+    
+    init(_ name: String, artist: String? = nil, state: Track.State) {
         self.name = name
         self.artist = artist
         self.state = state
@@ -33,13 +32,18 @@ struct SongToast: View {
         case .paused: "⏸"
         }
         
-        let displayName = if let artist {
+        let displayName = if let artist, settings.toastsShowArtistName {
             "\(artist) - \(name)"
         } else {
             name
         }
         
-        BMFontText("\(icon)~\u{2009}\u{2009}\u{2009}\(displayName)")
+        HStack(spacing: 0) {
+            // Icon should transition separately from the rest of the string
+            BMFontText(icon)
+            BMFontText("~\u{2009}\u{2009}\u{2009}")
+            BMFontText(displayName)
+        }
     }
 }
 
@@ -52,4 +56,5 @@ struct SongToast: View {
     }
     .padding()
     .environment(try! Bundle.main.font(name: "MusicTitleFont"))
+    .environment(DTSettings.shared)
 }

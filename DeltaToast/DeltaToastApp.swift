@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import os
+
+let logger = Logger(subsystem: "me.lewismcclelland.DeltaToast", category: "DeltaToast")
 
 @main
 struct DeltaToastApp: App {
@@ -18,7 +21,7 @@ struct DeltaToastApp: App {
 
     var body: some Scene {
         Settings {
-            EmptyView()
+            DTSettingsView()
         }
     }
 }
@@ -29,8 +32,6 @@ class DTAppDelegate: NSObject, NSApplicationDelegate {
     var openSettings: OpenSettingsAction?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.setActivationPolicy(.regular)
-        
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 300, height: 200),
             styleMask: [.borderless],
@@ -56,18 +57,15 @@ class DTAppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(nil)
         window.orderFrontRegardless()
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.shouldReopenTriggerSettings = true
         }
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
-//        @Environment(\.openSettings) var openSettings
-        
         if shouldReopenTriggerSettings {
             print("reopen")
             self.openSettings?()
-//            openSettings()
         }
         return false
     }
