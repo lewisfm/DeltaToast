@@ -11,3 +11,7 @@ This is the unofficial Mac Port of DeltaTune. It should work with any music app 
 I recommend setting this as a login app so it starts when you turn on your computer.
 
 If you open the app when it's already running you can access the settings.
+
+Also, check out the original (this is where I got the assets from):
+
+<https://deltatune.toastworth.com>
