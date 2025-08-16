@@ -4,6 +4,8 @@
 
 This is the unofficial Mac Port of DeltaTune. It should work with any music app (e.g. Apple Music, Spotify)!
 
+[Download](https://github.com/lewisfm/DeltaToast/releases)
+
 ![Screenshot](./screenshot.png)
 
 I recommend setting this as a login app so it starts when you turn on your computer.
