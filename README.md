@@ -15,3 +15,10 @@ If you open the app when it's already running you can access the settings.
 Also, check out the original (this is where I got the assets from):
 
 <https://deltatune.toastworth.com>
+
+## Settings
+
+There are a good amount of settings for you to choose from!
+
+<img width="512" height="440" alt="SCR-20250816-mlod" src="https://github.com/user-attachments/assets/8c620580-7a1f-4972-be33-449d4bc59683" />
+
