@@ -18,7 +18,7 @@ struct ContentView: View {
             if let track = toastController.track, allowToast {
                 SongToast(track, defaultName: "<unknown>")
                     .compositingGroup()
-                    .shadow(color: .black.opacity(0.75), radius: 5)
+                    .shadow(color: .black.opacity(0.6), radius: 8)
                     .transition(.move(edge: settings.toastPosition.slideInEdge).combined(with: .opacity))
                     .environment(\.bitmapFontScale, settings.scaleFactor)
             }
